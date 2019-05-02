@@ -1,0 +1,30 @@
+{
+
+	"project1":{
+
+		"title": "Softwér na sledovanie kartových poplatkov",
+		"href": "project1.html",
+		"agency": "Touch4IT",
+		"client": "Nets International"
+
+	},
+
+	"project2":{
+
+		"title": "Odborný slovník pre terminologické komisie SR",
+		"href": "#",
+		"agency": "touchXIT",
+		"client": "Gets International"
+
+	},
+
+	"project3":{
+
+		"title": "ERSTE Group International",
+		"href": "#",
+		"agency": "touchXIT",
+		"client": "Gets International"
+
+	}
+
+}

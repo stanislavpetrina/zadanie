@@ -1,0 +1,22 @@
+
+ ColorPicker
+ [cmd + shift + c]
+
+ Goto Anywhere
+ [cmd + R]
+
+
+ Search in file
+ [cmd + F]
+
+
+ Search files
+ [cmd + P]
+
+
+ Package Control
+ [cmd + shift + P]
+
+
+ Split screen, multiple editing
+ [cmd + alt + {NUM}]

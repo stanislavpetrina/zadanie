@@ -1,0 +1,106 @@
+
+<h2 class="h3 title-2">Intro</h2>
+
+<p>Nets je Norska spolocnost ktora spaja banky s poskytovatelmi elektronickych platobnych sieti VISA a MasterCard. Svojim klientom zabezpecuje outsourcovane sluzby od prijatia platby a spracovania transakcie az po udaje a bezpecnost.</p>
+
+
+<p>S vyuzivanim tychto sieti je vsak spojenych mnozstvo poplatkov a podmienok ktore sa neustale menia. 
+Banky preto potrebuju mat k dispozicii vzdy aktualne informacie o cenovej politike aby dokazali prisposobovat ponukane sluzby pre svojich zakaznikov.</p>
+
+
+<p>Cielom spolocnosti preto bolo vytvorit webaplikaciu ktora bankam umozni evidovat vsetky poplatky a zaroven sledovat meniace sa podmienky a ceny vyuzivanych sluzieb v platobnych sietach.</p>
+
+
+
+
+
+
+
+
+<h2 class="h3 m-t-8-medium m-t-10-large title-2">Moja úloha</h2>
+
+<p>S vedenim spolocnosti som konzultoval o moznostiach ktore ma v buducnosti ich platforma poskytnut a taktiez som sa podielal na navrhu uzivatelskeho rozhrania a tvorbe prototypov.</p>
+
+
+
+
+
+
+
+
+<h2 class="h3 m-t-8-medium m-t-10-large title-2">Prieskum</h2>
+
+<h3 class="h4 m-t-4-medium title-2">Elektronické platobné siete</h3>
+
+<p>Drzitelia platobnych kariet odoslu cez tieto siete rocne miliardy bezhotovostnych platieb za ktore hradia banky poplatky. Poplatky su rozne a zavisia od typu vyuzivanej sluzby ako napr.</p>
+
+
+<ul>
+    <li class="m-b-2">Cezhranične transakcie</li>
+    <li class="m-b-2">Bezkontaktne platby ako PayPass, PayWave</li>
+    <li class="m-b-2">Platby cez e-shopy</li>
+    <li class="m-b-2">Vyuzivanie kreditnych kariet</li>
+    <li>a dalsie</li>
+</ul>
+
+
+<p>Informacie o tychto sluzbach su spracovane v cennikoch ktore poskytuju zákazníkom(bankam) popisy fakturovaných služieb MasterCard, sadzby za účtované položky a informácie o fakturácii.</p>
+
+
+
+
+
+
+
+
+<h2 class="h3 m-t-8-medium m-t-10-large title-2">Problem</h2>
+
+<p>Cenniky su pravidelne revidovane kvolim roznym zmenam a vylepseniam sluzieb. S kazdou zmenou je na oficialnych strankach zverejneny novy dokument ktory je spracovany v PDF formate.</p>
+
+
+<p><b>Tento pristup sposoboval niekolko problemov pouzitelnosti:</b></p>
+
+
+<ul>
+    <li class="m-b-3">Uzivatel musi po kazdej aktualizacii cenniky opatovne stahovat aby mal vzdy aktualnu verziu</li>
+    <li class="m-b-3">Zmeny v cennikoch nie su graficky zvyraznene ani inak oddelene od povodneho obsahu</li>
+    <li class="m-b-3">Kazda sluzba obsahuje detailny opis a vsetky platobne podmienky co sposobovalo ze mali niektore dokumenty takmer 200 stran informacii</li>
+    <li>Uzivatelia nemaju k dispozicii ziadnu navigaciu ani iny sposob ako filtrovat udaje v cenniku </li>
+</ul>
+
+
+<h2 class="h3 m-t-8-medium m-t-10-large title-2">Notifikácie</h2>
+
+<p>Prvou ulohou bolo najst sposob ako uzivatelov upozornovat na vydane aktualizacie v cennikoch.
+Banky potrebuju byt informovane o vsetkych zmenach ktore suvisia s ich poskytovanymi sluzbami.</p>
+
+
+
+
+<h3 class="h4 m-t-4-medium title-2">Cenniky</h3>
+
+<p>Sluzby v cennikoch su rozdelene podla kategorii. Kazda sluzba ma uvedeny jedinecny identifikator, popisy a vlastne (sadzby za uctovane polozky) (platobne podmienky).</p>
+
+
+{{!-- Responsive IMG --}}
+
+{{{getPicture 'pricelist' 'png' 'Responsive image' 'Lorem ipsum dolor sit amet et veliot elipsum sinora padre madre puta muta'}}}
+
+
+<p>V pripade, ze nastanu zmeny v tejto sluzbe, klient je o nich automaticky informovany formou notifikacie. Notifikacie sme navrhovali tak aby odpovedali strukture sluzby v cenniku a v prvom rade zobrazovali iba zakladne udaje o aktualizacii.</p>
+
+
+
+{{#>footer}}
+
+    <div class="m-b-6 m-b-8-large">
+        <a href="{{ projects.project1.href }}" class="h2">{{ projects.project2.title }}</a>
+    </div>
+
+
+    <div>
+        <a href="#" class="h2">{{ projects.project3.title }}</a>
+    </div>
+
+
+{{/footer}}

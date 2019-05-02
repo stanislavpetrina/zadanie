@@ -1,0 +1,347 @@
+
+/*-----------------------------------------------------------------*/
+
+// FUTURE IMPROVEMENTS
+
+// duplicate media queries for margin and padding, beacause "@mixin spacing()" was 
+// invoke more than once
+
+// possible to set next classes like "down", only
+
+// check Foundation media queries => 
+
+/*---------------------------------------------------------------*/
+
+// HELPERS
+
+////
+// Type conversion functions for Sass
+// https://github.com/HugoGiraudel/SassyCast
+////
+
+// @import '../helpers/type-conversion-helper';
+
+
+
+
+////
+// here's a simple way to bring em-calc() back into your arsenal:
+// https://github.com/zurb/foundation-sites/issues/7158
+////
+
+@function em-calc($args...) {
+    
+    @return -zf-bp-to-em($args...)
+
+}
+
+
+
+
+/*-----------------------------------------------------------------*/
+
+// OPTIONS
+
+$length: 20;
+
+$size: 10;//px
+
+$sides: ( x y g top right bottom left );
+
+/*-----------------------------------------------------------------*/
+
+@mixin spacing($type) {
+
+    // no-orientation
+
+    // call @mixin
+
+
+    // doplnit parametre pre vyber tried
+
+    @include genCSS($type, $classes: 'global');
+
+
+
+    // orientation - portrait
+
+    @include breakpoint(portrait) {
+
+        @include genCSS($type, $classes: 'global-portrait');
+
+    }
+
+
+
+    // orientation - landscape
+
+    @include breakpoint(landscape) {
+
+        @include genCSS($type, $classes: 'global-landscape');
+
+    }
+
+
+  
+
+    @for $breakpoint from 1 to length($breakpoint-classes) {
+      
+        // Unlike some languages, the first item in a Sass list is number 1, the second number 2, and so forth.
+        //$breakpoint: $breakpoint + 1;
+
+
+        // get breakpoint name - skip "small" ($breakpoint+1)
+        $breakpointName: nth($breakpoint-classes, $breakpoint+1);
+
+
+        //@debug $breakpointName;
+
+
+        // get values of registered breakpoints
+        // PX, EM or REM Media Queries? 
+        // check article => https://zellwk.com/blog/media-query-units/
+        $breakpointVal: em-calc(map-get($breakpoints, $breakpointName));
+
+
+        // no-orientation
+
+        @include breakpoint($breakpointName) {
+                            
+            @include genCSS($type, $classes: 'breakpoint-up', $breakpointName: $breakpointName);
+
+        }
+
+      
+        
+        //////
+
+        // In this case I using original media queries syntax because Foundation mixin "breakpoint()" 
+        // thrown error => media query expression must begin with '(';
+
+
+        // Check the original Foundation syntax
+
+        // https://foundation.zurb.com/sites/docs/media-queries.html#breakpoint-function
+                        
+        //////
+                   
+      
+        // orientation - portrait
+
+        @media screen and (min-width: #{$breakpointVal}) and (orientation:portrait) {
+                            
+            @include genCSS($type, $classes: 'breakpoint-up-portrait', $breakpointName: $breakpointName);
+
+        }
+
+
+
+        // orientation - landscape
+
+        @media screen and (min-width: #{$breakpointVal}) and (orientation:landscape) {
+                            
+            @include genCSS($type, $classes: 'breakpoint-up-landscape', $breakpointName: $breakpointName);
+
+        }
+
+    }
+
+}
+
+
+
+
+@mixin genCSS($type, $classes, $breakpointName: false) {
+
+    @for $i from 0 to $length+1 {
+
+        @each $side in $sides {
+
+            // storage for original class name (top, right, bottom...)
+            $sideName: null;
+
+
+            @if $side == 'g' {
+
+                $sideName: $side;
+
+                $side: null;
+
+            }
+
+            @else {
+
+                // top => t | bottom => b
+                // $defName: if($side != 'x' or $side != 'y',  str-slice($side, 0, 1), $side);
+
+                $defName: str-slice($side, 0, 1);
+
+
+                // original class name (top, right, bottom...)
+                $sideName: $side;
+
+                
+                // original class name + dash(as divider symbol) 
+                // (-t, -r, -b...) => ".m-t" | ".p-t"
+                $side: '-'+$defName;
+
+            }
+            
+            
+            @include getClasses($type, $side, $sideName, $classes, $i, $breakpointName);
+            
+
+        }
+
+    }
+
+}
+
+
+
+
+@mixin getClasses($type, $side, $sideName, $classes, $i, $breakpointName: false) {
+
+    // no-orientation
+
+    @if $classes == 'global' {
+
+        &#{$side}-#{$i} {
+
+            @include setStyle($type, $sideName, $i, $notImportant: false);
+
+        }
+
+    }
+
+
+    // orientation - portrait
+
+    @else if $classes == 'global-portrait' {
+
+      &#{$side}-#{$i}-portrait {
+
+          @include setStyle($type, $sideName, $i, $notImportant: false);
+
+      }
+
+    }
+
+
+    // orientation - landscape
+
+    @else if $classes == 'global-landscape' {
+
+        &#{$side}-#{$i}-landscape {
+
+            @include setStyle($type, $sideName, $i, $notImportant: false);
+
+        }
+
+    }
+
+    
+    // no-orientation
+
+    @else if $classes == 'breakpoint-up' {
+
+        &#{$side}-#{$i}-#{$breakpointName} {
+                        
+            @include setStyle($type, $sideName, $i);
+
+        }  
+
+    }
+
+
+    // orientation - portrait
+
+    @else if $classes == 'breakpoint-up-portrait' {
+
+        &#{$side}-#{$i}-#{$breakpointName}-portrait {
+                        
+            @include setStyle($type, $sideName, $i);
+
+        }  
+
+    }
+
+
+    // orientation - landscape
+
+    @else if $classes == 'breakpoint-up-landscape' {
+
+        &#{$side}-#{$i}-#{$breakpointName}-landscape {
+                        
+            @include setStyle($type, $sideName, $i);
+
+        }  
+
+    }
+
+}
+
+
+
+
+@mixin setStyle($type, $sideName, $i, $notImportant: true) {
+
+    // set !important if breakpoint was defined
+    $important: if($notImportant == true, !important, '');
+
+    $calcSize: rem-calc($i*$size) #{$important};
+
+
+    @if $sideName == 'x' {
+
+        #{$type}-left: $calcSize;
+        #{$type}-right: $calcSize;
+
+    } 
+
+    @else if $sideName == 'y' {
+
+        #{$type}-top: $calcSize;
+        #{$type}-bottom: $calcSize;
+
+    }
+
+    @else if $sideName == 'g' {
+
+        #{$type}: $calcSize;
+
+    }
+
+    @else {
+
+        #{$type}-#{$sideName}: $calcSize;
+
+    }
+
+
+}
+
+
+
+
+// Margin
+
+.m {
+
+    @include spacing('margin'); 
+
+}
+
+
+// Padding
+
+.p {
+
+    @include spacing('padding'); 
+
+}
+
+
+
+
+
