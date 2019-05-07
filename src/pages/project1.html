@@ -44,7 +44,8 @@ Banky preto potrebuju mat k dispozicii vzdy aktualne informacie o cenovej politi
 </ul>
 
 
-<p>Informacie o tychto sluzbach su spracovane v cennikoch ktore poskytuju zákazníkom(bankam) popisy fakturovaných služieb MasterCard, sadzby za účtované položky a informácie o fakturácii.</p>
+<p>Podrobnosti o tychto sluzbach su financnym instituciam prezentovane vo forme cennikov ktore obsahuju 
+detailne informacie o fakturovaných službach MasterCard(platobnych sieti) a sadzby za účtované položky.</p>
 
 
 
@@ -55,18 +56,35 @@ Banky preto potrebuju mat k dispozicii vzdy aktualne informacie o cenovej politi
 
 <h2 class="h3 m-t-8-medium m-t-10-large title-2">Problem</h2>
 
-<p>Cenniky su pravidelne revidovane kvolim roznym zmenam a vylepseniam sluzieb. S kazdou zmenou je na oficialnych strankach zverejneny novy dokument ktory je spracovany v PDF formate.</p>
+<p>Cenniky su pravidelne aktualizovane kvoli castym zmenam v platobnych podmienkach sluzieb. Po kazdej aktualizacii poskytovatel platobnej siete zverejni novy dokument ktory opisuje aka sluzba bola upravena a kedy bude uvedena do platnosti.</p>
+
+
+<p>Problem spocival v tom, ze klientom nebol poskytnuty ziadny externy pristup k tymto datam
+ktory by im umoznil napr. automaticky sledovat aktualizacie sluzieb alebo vyvoj ich cien za urcite obdobie.</p>
 
 
 <p><b>Tento pristup sposoboval niekolko problemov pouzitelnosti:</b></p>
 
 
 <ul>
-    <li class="m-b-3">Uzivatel musi po kazdej aktualizacii cenniky opatovne stahovat aby mal vzdy aktualnu verziu</li>
-    <li class="m-b-3">Zmeny v cennikoch nie su graficky zvyraznene ani inak oddelene od povodneho obsahu</li>
-    <li class="m-b-3">Kazda sluzba obsahuje detailny opis a vsetky platobne podmienky co sposobovalo ze mali niektore dokumenty takmer 200 stran informacii</li>
-    <li>Uzivatelia nemaju k dispozicii ziadnu navigaciu ani iny sposob ako filtrovat udaje v cenniku </li>
+    <li class="m-b-3">Uzivatel musi po kazdej aktualizacii cenniku data opatovne spracovat</li>
+    <li class="m-b-3">Kazda sluzba obsahuje detailny opis a vsetky platobne podmienky, niektore dokumenty (PDF) preto obsahovali cez 200 stran informacii</li>
+    <li class="m-b-3">Uzivatelia nemaju k dispozicii ziadnu navigaciu ani iny sposob ako sa v cenniku pohybovat</li>
+    <li class="m-b-3">Data nie je mozne lubovolne filtrovat podla vlastnych kriterii</li>
+    <li>Casova narocnost, potreba budovat vlastnu infrastrukturu a tim ktory bude data spracovavat</li>
 </ul>
+
+
+
+<h3 class="h4 m-t-4-medium title-2">Kartový procesor</h3>
+
+<p>Banky preto vyuzivaju sluzby kartovych procesorov ako NETS ktore uz maju vybudovanu vlastnu
+infrastrukturu a pomahaju tak klientom zabezpecovat technicky chod platobnych systemov a
+spracovanie tychto udajov.</p>
+
+
+<p><b>Dalsou vyzvou pre tuto spolocnost bolo najst sposob ako spristupnit tieto data klientom pomocou webaplikacie v uzivatelsky privetivej forme.</b></p>
+
 
 
 <h2 class="h3 m-t-8-medium m-t-10-large title-2">Notifikácie</h2>
@@ -75,31 +93,129 @@ Banky preto potrebuju mat k dispozicii vzdy aktualne informacie o cenovej politi
 Banky potrebuju byt informovane o vsetkych zmenach ktore suvisia s ich poskytovanymi sluzbami.</p>
 
 
-
-
 <h3 class="h4 m-t-4-medium title-2">Cenniky</h3>
 
 <p>Sluzby v cennikoch su rozdelene podla kategorii. Kazda sluzba ma uvedeny jedinecny identifikator, popisy a vlastne (sadzby za uctovane polozky) (platobne podmienky).</p>
 
-
-{{!-- Responsive IMG --}}
-
 {{{getPicture 'pricelist' 'png' 'Responsive image' 'Lorem ipsum dolor sit amet et veliot elipsum sinora padre madre puta muta'}}}
 
 
+
 <p>V pripade, ze nastanu zmeny v tejto sluzbe, klient je o nich automaticky informovany formou notifikacie. Notifikacie sme navrhovali tak aby odpovedali strukture sluzby v cenniku a v prvom rade zobrazovali iba zakladne udaje o aktualizacii.</p>
+
+{{{getPicture 'announcement' 'png' 'Responsive image' 'Announcement'}}}
+
+{{{getPicture 'announcement-ui' 'png' 'Responsive image' ''}}}
+
+
+
+<h3 class="h4 m-t-4-medium title-2">Detail notifikacie</h3>
+
+<p>V detailnom nahlade notifikacie je nasledne zobrazeny cely popis sluzby a sadzobnik poplatkov.</p>
+
+{{{getPicture 'announcement-detail' 'png' 'Responsive image' 'Struktura notifikacie'}}}
+
+{{{getPicture 'announcement-ui-detail' 'png' 'Responsive image' 'Detail notifikacie'}}}
+
+{{{getPicture 'prices' 'jpg' 'Responsive image' 'Najcastejsie sa aktualizacie tykaju cenovej politiky sluzieb. Zmeny v sadzbach su rozne zvyraznene podla poklesu alebo navysenia sumy.'}}}
+
+
+
+<h3 class="h4 m-t-4-medium title-2">Vysledok (Notifikacie)</h3>
+
+<p>Vdaka notifikaciam su klienti vcas informavany o pripadnych zmenach v cennikoch a maju prehlad o vyvoji cien jednotlivych sluzieb.</p>
+
+
+
+
+
+
+
+
+<h2 class="h3 m-t-8-medium m-t-10-large title-2">Cennik</h2>
+
+<p>Povodne cenniky boli spracovane v PDF dokumentoch ktore musel uzivatel po kazdej ich aktualizacii opatovne stahovat aby mal k dispozicii najnovsiu verziu.Okrem fulltextoveho vyhladavania v PDF prehliadaci nemali uzivatelia ziadnu inu moznost ako filtrovat udaje v dokumentoch.</p>
+
+
+
+<p>Cenniky sme preto rozsirili o navigaciu ktora uzivatelom umoznuje rychle presuvanie medzi jednotlivymi sluzbami. Zaroven zobrazuje v ktorej casti cenniku sa uzivatel aktualne nachadza.</p>
+
+{{{getPicture 'pricelist-navigation' 'png' 'Responsive image' ''}}}
+
+{{{getPicture 'pricelist-nav' 'png' 'Responsive image' ''}}}
+
+{{{getPicture 'pricelist-open' 'png' 'Responsive image' ''}}}
+
+
+
+
+
+
+
+<h2 class="h3 m-t-8-medium m-t-10-large title-2">Fakturovanie sluzieb</h2>
+
+<p>Banky pravidelne obdrzia od poskytovatelov platobnych sieti stovky faktur za vyuzivanie ich sluzieb. V Nets tieto data povodne spracovavali do Excel datasetov ktore nasledne sprostredkovali bankam. Klienti tak mali moznost tieto udaje lubovolne vizualizovat a analyzovat pomocou roznych Excel nastrojov ako su kontingecne(pivot) tabulky, grafy a vzorce.</p>
+
+
+
+<p>Praca s takymito datami si ale vyzaduje pokrocilu znalost Excelu co na strane klienta nebolo vzdy samozrejmostou. Tento sposob bol pre klientov castokrat narocny a koncil opakovanymi telefonatmi
+na helpdesk.</p>
+
+
+
+<p><b>Jednou z castych poziadaviek klientov bolo ako jednoducho previezt data z vystavenych faktur do grafickej podoby.</b></p>
+
+
+
+<ul>
+    <li class="m-b-2">Klient si moze napr. jednodocho skontrolovat kolko ho stala sluzba "xy" za urcite obdobie</li>
+    <li class="m-b-2">Ako sa vyvijali ceny sluzieb za urcite obdobie</li>
+    <li class="m-b-2">Celkove vydavky</li>
+    <li>atd</li>
+</ul>
+
+
+
+<p>Kazda faktura obsahuje niekolko atributov ako napr. nazov sluzby, kodove oznacenie, pocet transakcii, vysledna suma atd., ktore potrebuje klient lubovolne filtrovat a zobrazovat v tabulkach.</p>
+
+
+{{{getPicture 'invoices-wireframe-v2' 'png' 'Responsive image' ''}}}
+
+
+<p>Navrhli sme preto pivot editor pomocou ktoreho si uzivatel najprv vyberie z faktury atributy ktore ma moznost pridat do tabulky. Následne moze pomocou funkcie drag & drop dodatocne menit hierarchiu tychto atributov v tabulke.</p>
+
+
+{{{getPicture 'pivot-editor-steps' 'png' 'Responsive image' ''}}}
+
+
+{{{getPicture 'invoices-ui-v2' 'png' 'Responsive image' 'Vysledne data zobrazene v tabulke podla kriterii nastavenych v pivot editore'}}}
+
+
+<p>Data je následne možné vizualizovať pomocou roznych metód ako Circle View, Bar Chart Treemap, Matrix a pod.</p>
+
+
+{{{getPicture 'select-view' 'png' 'Responsive image' ''}}}
+
+
+{{{getPicture 'invoices-ui-circle' 'png' 'Responsive image' 'Vizualizacia vybranych udajov: Circle View'}}}
+
+
+{{{getPicture 'invoices-ui-treemap' 'png' 'Responsive image' 'Vizualizacia vybranych udajov: Treemap'}}}
+
+
+<p>Aplikacia je zatial vo faze testovania a bude sa pocas dalsich dizajn iteracii optimalizovat.</p>
 
 
 
 {{#>footer}}
 
     <div class="m-b-6 m-b-8-large">
-        <a href="{{ projects.project1.href }}" class="h2">{{ projects.project2.title }}</a>
+        <a href="{{ projects.project2.href }}" class="h2">{{ projects.project2.title }}</a>
     </div>
 
 
     <div>
-        <a href="#" class="h2">{{ projects.project3.title }}</a>
+        <a href="{{ projects.project3.href }}" class="h2">{{ projects.project3.title }}</a>
     </div>
 
 

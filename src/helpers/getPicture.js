@@ -3,18 +3,18 @@ module.exports = function(picName, format, alt, figcaption) {
 
 	var path = 'assets/img/';
 
-	// | small => 700 | medium => 900 | large => 1100 | 
+	// | medium => 700 | large => 900 | 
 
 	// available picture sizes
-	var	mediumPic2x = path+picName+'-medium@2x.'+format,
-		largePic2x  = path+picName+'-large@2x.'+format;
+	var	mediumPic2x = path+picName+'-medium.'+format,
+		largePic2x  = path+picName+'-large.'+format;
 
 
 
 	// load set of responsive pictures
 
 	var picSet = '<source media="(max-width: 768px)" data-srcset="'+mediumPic2x+'">';
-		picSet += '<img data-toggle="'+picName+'" data-src="'+largePic2x+'" class="lazyload shadow-pic" alt="'+alt+'">';
+		picSet += '<img data-toggle="'+picName+'" data-src="'+largePic2x+'" class="lazyload" alt="'+alt+'">';
 
 
 

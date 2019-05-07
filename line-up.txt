@@ -252,6 +252,105 @@
 
 
 
+
+
+		---------------------------------------------------------------
+
+
+		-  Prejst case study NETS (gramatika, korektury)
+
+
+		---------------------------------------------------------------
+
+
+		-  Profil
+
+
+		---------------------------------------------------------------
+
+
+		-  Uvodny text
+
+
+		---------------------------------------------------------------
+
+
+		-  Export obrazkov bez "Interlace PNG"
+
+
+		---------------------------------------------------------------
+
+
+		-  Podrobnejsi opis problemu
+
+
+		   Poskytovatelia platobnych sieti maju data o poplatkoch 
+		   zverejnene formou PDF suborov, ziadne API ani iny pristup k datam
+
+
+		   Spolocnost tieto zmeny sleduje na miesto banky, spracuje ich do 
+		   datasetu. Pre banky spracuje data do nejakej citatelnej podoby 
+		   napr. do Excel suboru
+
+
+		   NETS ako prostredny clanok usetri klientov od dalsej byrokracie,
+		   banka ziska viac casu, z dlhodobeho hladiska usetri financne 
+		   prostriedky na spravu systemu
+
+
+		   Banka dostane tieto data v surovej podobe, Excel dataset
+		   z ktoreho si samostatne filtruje data pomocou dostupnych
+		   Excel funkcii ako vzorce, pivot tabulky atd.
+
+
+		   Praca s Excel datami je komplikovana, vyzaduje pokrocilejsiu znalost
+		   Excelu na strane uzivatela, mnozstvo funkcii ktore sa nevyuzivaju,
+
+
+		   Narocny onboarding v pripade noveho klienta(banky)
+
+
+		   Vysledok, caste telefonaty na technicku podporu NETS,
+		   dalsia komunikacia s bankou, frustracia klientov
+
+
+		---------------------------------------------------------------
+
+
+		-  Zmazat video, a select service obrazok
+
+		   OK
+
+
+		---------------------------------------------------------------
+
+
+		-  Vysledok riesenia, meratelny, nemeratelny, zakoncit case study
+
+
+		---------------------------------------------------------------
+
+
+		-  NETS - duplicitne texty v sekcii: 
+
+		   Problem a Cenik
+
+
+		---------------------------------------------------------------
+
+
+		-  NETS - Fakturovanie sluzieb 
+
+		   Zdovodnit preco sme Excel funkcionalitu preniesli do 
+		   prostredia aplikacie
+
+
+		---------------------------------------------------------------
+
+
+		-  Prejst EGIT case study
+
+
 		---------------------------------------------------------------
 
 
@@ -264,6 +363,122 @@
 
 
 		-  Skontrolovat gramatiku
+
+
+		---------------------------------------------------------------
+
+
+		-  Doplnit k obrazkom alt texty a figcaption popis
+
+
+		---------------------------------------------------------------
+
+
+		-  Back to top na koniec clanku?
+
+
+		---------------------------------------------------------------
+
+
+		-  Vytvorit favicon?
+
+
+		---------------------------------------------------------------
+
+
+		-  nastavit htaccess, pretty URL a redirect pre projekty
+
+		   (www.petrina.sk/projekty/pekny-nazov-projektu)
+
+
+		---------------------------------------------------------------
+
+
+		-  Pridat do profilu napr. ake nastroje pouzivam
+
+
+		---------------------------------------------------------------
+
+
+		-  Mozno napisat aj nejake odborne clanky, o pouzivanych nastrojoch,
+		   technologiach atd.
+
+
+		---------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+		---------------------------------------------------------------
+
+
+		-  Pre <video> nastavit "mute"
+
+		   OK
+
+
+		---------------------------------------------------------------
+
+
+		-  Vyrobit "getVideo" helper
+
+		   OK
+
+
+		---------------------------------------------------------------
+
+
+		-  Vyrobit poster(large|medium) pre <video>
+
+		   OK
+
+
+		---------------------------------------------------------------
+
+
+		-  Safari robi duplicitny request na <video> poster image
+
+		   OK
+
+
+		---------------------------------------------------------------
+
+
+		-  Otestovat <video> poster lazyload na mobiloch
+
+		   OK
+
+
+		---------------------------------------------------------------
+
+
+		-  Nastavit lazyload pre <video> poster
+
+		   OK
+
+
+		---------------------------------------------------------------
+
+
+		-  Nastavit transparent base64 image pre atribut "poster"
+
+		   OK
+
+
+		---------------------------------------------------------------
+
+
+		-  Vyhodit ".shadow-pic" border na obrazkoch
+
+		   OK
 
 
 		---------------------------------------------------------------
@@ -317,18 +532,6 @@
 		---------------------------------------------------------------
 
 
-		-  Strucny opis obrazovky
-
-
-		---------------------------------------------------------------
-
-
-		-  Vytvorit favicon?
-
-
-		---------------------------------------------------------------
-
-
 		-  otestovat v Android browseroch
 
 		   OK
@@ -361,14 +564,6 @@
 		---------------------------------------------------------------
 
 
-		-  nastavit htaccess, pretty URL a redirect pre projekty
-
-		   (www.petrina.sk/projekty/pekny-nazov-projektu)
-
-
-		---------------------------------------------------------------
-
-
 		-  convert px to rem => rem-calc();
 
 		   OK (mozno nabuduce :D)
@@ -380,25 +575,6 @@
 		-  vytvorit 404 - page not found
 
 		   OK - nie je teraz podstatne
-
-
-		---------------------------------------------------------------
-
-
-		-  Pridat do profilu napr. ake nastroje pouzivam
-
-
-		---------------------------------------------------------------
-
-
-		-  Export obrazkov, small, retina, medium
-
-
-		---------------------------------------------------------------
-
-
-		-  Mozno napisat aj nejake odborne clanky, o pouzivanych nastrojoch,
-		   technologiach atd.
 
 
 		---------------------------------------------------------------

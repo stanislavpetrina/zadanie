@@ -4,6 +4,21 @@
 a, button:focus { outline: none; }
 
 
+video { 
+
+	width:100%;
+	display:block;
+
+}
+
+
+.video {
+
+	background-size:cover;
+
+}
+
+
 .reset-list {
 
 		//@extend .no-bullet;
@@ -50,11 +65,13 @@ to handle this for you, but you can add some extra CSS to account for it.
 
 }
 
+
 .display-block {
 
 		display:block;
 
 }
+
 
 .scroll-off {
 
@@ -141,7 +158,7 @@ to handle this for you, but you can add some extra CSS to account for it.
 	img {
 			
 			width:100%;
-			max-width:1200px;
+			max-width:1600px;
 			position:relative;
 			z-index: -1;
 			border:none;

@@ -1,0 +1,81 @@
+
+<h2 class="h3 title-2">Intro</h2>
+
+<p>
+V spolupraci s Erste Group International sme pracovali na prototype mobilnej aplikacie
+ktora pomaha viest deti k financnej gramotnosti. Deti sa naucia na co sluzia peniaze, 
+aky je rozdiel medzi prijmami a vydavkami ci ako si peniaze pravidelne setrit atd. Dieťa ma pomocou aplikacie vlastný pasívný prístup k uctom ktore si moze same pomenovat a sporit si snimi na svoje sny.
+</p>
+
+
+<p>
+Aplikácia dokaze komunikovat s hardware krabičkou (ako pokladnickou) kam si mozu deti vkladat fyzicke peniaze. Tie sa im nasledne pripisuju na sporiaci ucet. Rodic moze detský účet sledovať a ovládať vo svojom internet bankingu.
+</p>
+
+
+<p>
+Cielom projektu bolo otestovat ako moze hardware v realnom case komunikovat s iOS aplikaciou ktora nasledne zobrazuje ziskane data v grafickej podobe na obrazovke smartphonu.
+</p>
+
+
+
+
+
+
+
+
+<h2 class="h3 title-2">Moja úloha</h2>
+
+<p>Ulohou bolo navrhnut vizualny dizajn aplikacie podla sucasneho dizajn manualu aplikacii George od Slovenskej sporitelne.</p>
+
+
+<h3 class="h4 title-2">Koncept</h3>
+
+<p>Dieta moze mat v aplikacii stanoveny financny ciel alebo hmotnu vec na ktoru si postupne odklada peniaze. Ak si zvladne nasporit urcitu ciastku, rodic moze dieta lubovolne odmenit, napr. odoslat na ucet financny bonus. Aplikacia zobrazuje historiu vkladov dietata, aktualny stav uctu, zoznam splnenych cielov, ziskane bonusy alebo progresbar ktory ukazuje kolko € ostava k dosiahnutiu aktualneho ciela.</p>
+
+
+{{{getPicture 'egit-1' 'png' 'Responsive image' 'Lorem ipsum dolor sit amet'}}}
+
+
+{{{getPicture 'egit-2' 'png' 'Responsive image' 'Lorem ipsum dolor sit amet'}}}
+
+
+<h3 class="h4 title-2">Komunikacia appky s hardwarom</h3>
+
+<p>
+Prototyp bol pomerne jednoduchý. Vo vnutri krabicky bol ultrazvukovy senzor, ktory ak zaznamenal 
+prerusenie nejakym predmetom hodenym cez otvor na mincu, nasledne zvysil pocitadlo v pamati 
+o 1. Na tuto logiku bolo pouzite Arduino a zaroven sa tieto zbierane data (pocitadlo) zobrazovali na LCD.
+</p>
+
+
+<p>
+V prípade, že nieco zaznamenal senzor, Arduino odoslalo data cez bluetooth do aplikacie, kde sa taktiez zvysilo pocitadlo o 1. Aplikacia zobrazovala kolko ma uzivatel nasporenych minci.
+</p>
+
+
+<p>
+Komunikacia z takeho zariadenia cez bluetooth na mobilnu aplikáciu vacsinou funguje tak, ze sa dohodnu kody vo forme stringov, na ktore je aplikacia pripravena reagovat ked jej dorazia cez bluetooth (vyuziva sa serial interface).
+</p>
+
+
+<p>
+<b>Priklad:</b>
+
+cez bluetooth dorazi do aplikacie string "INCREASE_COUNTER". Kedze aplikacia pocuva cez bluetooth, porovna si to co jej prislo spolu s tymto stringom a ak sa to zhoduje, adekvatne reaguje (v nasom pripade to bolo zvysenim toho cisla).
+</p>
+
+
+{{#>footer}}
+
+    <div class="m-b-6 m-b-8-large">
+        <a href="{{ projects.project1.href }}" class="h2">{{ projects.project1.title }}</a>
+    </div>
+
+
+    <div>
+        <a href="{{ projects.project2.href }}" class="h2">{{ projects.project2.title }}</a>
+    </div>
+
+
+{{/footer}}
