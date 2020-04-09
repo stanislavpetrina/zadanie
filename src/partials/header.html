@@ -1,24 +1,6 @@
 
-{{#ifpage 'index'}}
 
-    <header class="header-index p-t-4-portrait p-b-10-portrait p-t-3-landscape p-b-10-landscape p-t-6-medium p-b-15-medium p-b-13-medium-landscape p-t-8-large p-b-16-large">
-
-{{/ifpage}}
-
-
-{{#ifpage 'profile'}}
-
-    <header class="header-profile p-t-4-portrait p-b-10-portrait p-t-3-landscape p-b-10-landscape p-b-0-slandscape p-t-6-medium p-t-8-large">
-
-{{/ifpage}}
-
-
-{{#unlesspage 'index' 'profile'}}
-
-    <header class="p-y-4-portrait p-y-3-landscape p-y-6-medium p-y-8-large">
-
-{{/unlesspage}}
-
+    <header class="header-index p-t-4-portrait p-b-5-portrait p-t-3-landscape p-b-4-landscape p-t-6-medium p-b-15-medium p-b-7-medium-landscape p-t-8-large p-b-8-large">
 
 
     <div class="grid-container">
@@ -47,8 +29,8 @@
                   <div class="grid-container p-x-0-large m-x-0-large">
                       <ul class="dropdown menu" data-dropdown-menu>
                           <li><div class="rect"></div></li>
-                          <li><a href="/">Úvod</a></li>
-                          <li><a href="profile.html">Profil</a></li>
+                          <li><a href="/">Projekty</a></li>
+                          <li><a href="#">Resume</a></li>
                           <li><a href="#kontakt" class="link-contact">Kontakt</a></li>
                       </ul>
                   </div>
@@ -58,11 +40,7 @@
 
       {{#ifpage 'index'}}
 			
-			    <div class="grid-x align-right">
-	          	<div class="cell xlarge-8">
-	              	<h1>ux/ui dizajnér<span>front-end developer</span></h1>
-	          	</div>
-      		</div>
+			    <h1>projekty</h1>
 
       {{/ifpage}}
 
@@ -93,7 +71,7 @@
 
           {{#getData page}}
 
-              <h1 class="font-family-2 text-initial m-t-10 m-b-1 m-t-8-landscape m-t-9-smedium-landscape m-t-14-medium m-t-10-medium-landscape m-t-16-large">{{title}}</h1>
+              <h1 class="font-family-2 text-initial header-project">{{title}}</h1>
           
           {{/getData}}
 

@@ -1,14 +1,13 @@
-
 <h2 class="h3 title-2">Intro</h2>
 
 <p>
-Očná klinika iClinic patrí medzi popredné kliniky v Európe zamerané na odstránenie alebo korekciu dioptrii laserovou operaciou oci. S rastucim zaujmom o tento zakrok spolocnost postupne rozsirila svoje posobenie najma na Slovensku a v zahranici.
+Očná klinika iClinic patrí medzi popredné kliniky v Európe zamerané na odstránenie alebo korekciu dioptrií laserovou operáciou oči. S rastúcim záujmom o tento zákrok spoločnosť postupne rozšírila svoje pôsobenie najmä na Slovensku a v zahraničí.
 </p>
 
 
 
 <p>
-Aby bolo mozne aj v buducnosti nadalej expandovat a zaroven udrzat bezproblemovy chod ambulancii potrebovali lekari vytvorit system ktory im umozni efektivne spravovat udaje a koordinovat svoje aktivity.
+Aby bolo možné aj v budúcnosti naďalej expandovať a zároveň udržať bezproblémový chod ambulancii potrebovali lekári vytvoriť systém, ktorý im umožní efektívne spravovať údaje a koordinovať svoje aktivity.
 </p>
 
 
@@ -18,60 +17,64 @@ Aby bolo mozne aj v buducnosti nadalej expandovat a zaroven udrzat bezproblemovy
 
 
 
-<h2 class="h3 title-2">Ciel</h2>
+<h2 class="h3 title-2">Cieľ</h2>
 
 <p>
-Mojou ulohou bolo navrhnut a otestovat vizualny dizajn webaplikacie ktora bude odbornikom pomahat planovat lekarske ukony a dokumentovat zdravotne informacie o ich pacientoch.
+Mojou úlohou bolo navrhnúť a otestovať vizuálny dizajn webaplikácie, ktorá bude odborníkom pomáhať plánovať lekárske úkony a dokumentovať zdravotné informácie o ich pacientoch.
 </p>
 
 
 
-<h3 class="h4 title-2">Rozhovory</h3>
+<h3 class="h4 title-2">Prieskum</h3>
 
 <p>
-Prieskum som odstartoval(zacal) seriou rozhovorov s lekarmi priamo v priestoroch kliniky. Cielom rozhovorov bolo preskumat:
+Každý lekár poskytuje starostlivosť určitému počtu pacientov s ktorými je počas celého procesu liečby v kontakte. Keďže je o tento lekársky zákrok veľký záujem musia lekári na niekoľko dní až týždňov plánovať lekárske úkony ktoré budú vykonávať. 
+</p>
+
+
+<p>
+Pre lekárov bolo kľúčové aby sa v rozhraní aplikácie dokázali pomocou kalendára rýchlo presúvať medzi jednotlivými dňami v mesiaci a editovať termíny. Podmienkou bolo aby kalendár zvýrazňoval tie dni v ktorých sú už rezervované termíny pre pacientov.
+</p>
+
+
+<p>
+Počas dňa dokážu lekári prijať iba určitý počet pacientov. Potrebujú preto sledovať koľko termínov majú v jednotlivých dňoch naplánovaných a ako veľmi budú ambulancie vyťažené. Na zvýraznenie dátumov v kalendári sú preto použité 3 rozličné farby. Každá z farieb charakterizuje iný
+stupeň obsadenosti.
 </p>
 
 
 <ul>
-    <li class="m-b-2">Sposoby ako lekari planuju svoje aktivity na klinike</li>
-    <li class="m-b-2">Ako spracovavaju informacie o pacientoch</li>
-    <li class="m-b-2">Ktore postupy ocenuju a ktore z nich je naopak potrebne zmenit alebo zlepsit</li>
-    <li>Ciele ktore im ma novy system pomoct dosiahnut</li>
+    <li class="m-b-2">Modrá farba charakterizuje spodnú hranicu počtu termínov ( napr. do 5 termínov)</li>
+    <li class="m-b-2">Zelená farba (od 6 - 14 termínov)</li>
+    <li>Červená farba vrchnú hranicu (15 - 20 termínov)</li>
 </ul>
 
 
-
-<h3 class="h4 title-2">Priebeh pozorovania</h3>
-
-<p>
-Nasledne som pozoroval lekarov pri praci s pouzivanym softwarom.
-<br>
-Lekar podrobne komentoval vykonavane kroky ako napr. vyhladavanie, zaevidovanie pacienta do databazy atd.  V priebehu týchto krokov som spisoval co najviac poznamok o vsetkom co sa zdalo byt matuce ci nejednoznacne vratane roznych navrhov a otazok.
-</p>
-
-
-
-<h3 class="h4 title-2">Analyza</h3>
-
-<p>
-Po skonceni uvodneho prieskumu som zhromazdil vsetky ziskane poznamky a na zaklade vzajomnych vztahov ich rozdelil do “x” hlavnych skupin:
-</p>
-
-
-<ul>
-    <li class="m-b-2">frustracie uzivatelov</li>
-    <li class="m-b-2">nove pozadovane funkcie</li>
-    <li class="m-b-2">funkcie ktore uzivatelia ocenuju</li>
-    <li class="m-b-2">situacie ktore miatli uzivatelov</li>
-    <li class="m-b-2">problemy efektivnosti</li>
-    <li>riesenia ktore si pouzivatelia vytvarali</li>
-</ul>
+{{{getPicture 'kalendar' 'png' 'Obrázok ktorý znázorňuje návrh kalendára' ''}}}
 
 
 <p>
-Tento spôsob mi pomohol zorganizovat mnozstvo udajov a ziskat kompletny obraz o doterajsom výskume a uzivateloch.
+V rámci aplikácie je kalendár umiestnený vertikálne v ľavom panely ktorý je samostatne rolovatelný.
+Toto rozloženie umožňuje užívateľom pomocou scrolovania rýchle presúvanie medzi mesiacmi a zároveň zobrazuje obsadenosť ambulancie v ďalších mesiacoch.
 </p>
+
+
+<p>
+V pravej časti sa následne zobrazia registrované a voľne termíny pre vybraný deň v mesiaci.
+</p>
+
+
+{{{getPicture 'iclinic-index' 'png' 'Obrázok ktorý znázorňuje rozhranie hlavnej stránky, ktorá sa lekárovi zobrazí po prihláseni do aplikácie' ''}}}
+
+
+<p>
+Každý pacient má v aplikácií vytvorený svoj osobný profil. Lekár si v ňom môže overiť kontaktné údaje, skontrolovať naplánované termíny alebo predpísať pacientovi lieky.
+</p>
+
+
+{{{getPicture 'iclinic-profil-wireframe' 'png' 'Wireframe ktorý znázorňuje návrh rozloženia pre Profil pacienta' 'Wireframe ktorý znázorňuje návrh rozloženia pre podstránku "Profil pacienta"'}}}
+
+{{{getPicture 'iclinic-profil' 'png' 'Responsive image' 'Profil pacienta'}}}
 
 {{{getPicture 'persona' 'png' 'Responsive image' 'Lorem ipsum dolor sit amet'}}}
 
@@ -88,16 +91,10 @@ Tento spôsob mi pomohol zorganizovat mnozstvo udajov a ziskat kompletny obraz o
 {{{getPicture 'iclinic-pacienti' 'png' 'Responsive image' 'Lorem ipsum dolor sit amet'}}}
 
 
+
 {{#>footer}}
 
-    <div class="m-b-6 m-b-8-large">
-        <a href="{{ projects.project1.href }}" class="h2">{{ projects.project1.title }}</a>
-    </div>
-
-
-    <div>
-        <a href="{{ projects.project3.href }}" class="h2">{{ projects.project3.title }}</a>
-    </div>
+    {{{getProject projects.project1}}}
 
 
 {{/footer}}

@@ -109,6 +109,16 @@ to handle this for you, but you can add some extra CSS to account for it.
 }
 
 
+/*-----------------------------------------------------------------*/
+
+/* DECORATION */
+
+.href {
+	color:blue;
+	text-decoration:underline;
+}
+
+
 ////
 // here's a simple way to bring em-calc() back into your arsenal:
 // https://github.com/zurb/foundation-sites/issues/7158
@@ -121,6 +131,28 @@ to handle this for you, but you can add some extra CSS to account for it.
 }
 
 /*-----------------------------------------------------------------*/
+
+/* COLORS */
+
+$bg-color:#31394e;
+
+
+header a:focus{ 
+
+	color:rgba(255, 255,255, 0.8);
+	border-bottom:1px solid white;
+
+}
+
+.hover-gray {	
+
+	&:hover { color:#717171; }
+	&:focus { color:#717171; }
+
+}
+
+/*-----------------------------------------------------------------*/
+
 
 /* REVEAL */
 
@@ -265,12 +297,6 @@ figcaption {
 
 /* MIXINS */
 
-@mixin background() {
-
-		background: #3e04ca !important;
-		    //background: radial-gradient(circle, #5d24cc 50%, #412da9 100%);
-
-}
 
 
 /*-----------------------------------------------------------------*/
@@ -283,9 +309,8 @@ figcaption {
 
 header {
 
-		// Header gradient
-		@include background();
-
+		// BG
+		background-color:#25275d;
 
 		// Icons
 		.iconify { 
@@ -407,7 +432,7 @@ header {
 								left:0;
 								right:0;
 
-								@include background();
+								background-color:$bg-color !important;
 
 						}
 						
@@ -449,7 +474,7 @@ header {
 
 								ul.dropdown {
 
-										margin-top:100px;
+										margin-top:150px;
 
 										li {
 
@@ -498,7 +523,7 @@ header {
 
 								ul.dropdown {
 
-										margin-top:100px;
+										margin-top:150px;
 
 										li {
 
@@ -590,8 +615,8 @@ header {
 
 		/* ----------------------------------------------------------------------------- */
 
-
-
+		
+		/* HEADER TITLE */
 
 		// Mobile devices, portrait
 
@@ -650,7 +675,6 @@ header {
 
 								line-height:60px;
 								font-size:35px;
-								letter-spacing:1.5px;
 
 
 								span {
@@ -659,6 +683,14 @@ header {
 										letter-spacing:3.5px;
 
 								}
+
+						}
+
+
+						h1.header-project {
+
+								font-size:30px; 
+								line-height:40px !important;
 
 						}
 
@@ -677,10 +709,9 @@ header {
 
 						h1 { 
 
-								margin-top:80px;
+								margin-top:90px;
 								font-size:45px !important;
 								line-height:80px !important;
-								letter-spacing:1.5px !important;
 
 
 								span {
@@ -692,6 +723,15 @@ header {
 								}
 
 						}
+
+
+						h1.header-project {
+
+								font-size:35px !important; 
+								line-height:60px !important;
+
+						}
+
 
 				}
 
@@ -720,7 +760,6 @@ header {
 								margin-top:120px;
 								font-size:55px; 
 								line-height:100px;
-								letter-spacing:2px;
 
 
 								span {
@@ -749,8 +788,14 @@ header {
 
 						h1 { 
 
-								margin-top:130px;
-								font-size:65px; 
+								margin-top:180px;
+								font-size:70px;
+
+						}
+
+						h1.header-project {
+
+								font-size:50px; 
 
 						}
 

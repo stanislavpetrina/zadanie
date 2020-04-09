@@ -1,5 +1,5 @@
 AuthType Basic
-AuthName "Password Protected Area"
+AuthName "Password Protected Area XS"
 AuthUserFile /.htpasswd
 Require valid-user
 
@@ -108,4 +108,3 @@ RewriteCond %{HTTP_USER_AGENT} ^WWWOFFLE [OR]
 RewriteCond %{HTTP_USER_AGENT} ^Xaldon\ WebSpider [OR]
 RewriteCond %{HTTP_USER_AGENT} ^Zeus
 RewriteRule ^.* - [F,L]
- 

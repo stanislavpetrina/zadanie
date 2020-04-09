@@ -2,19 +2,19 @@
 <h2 class="h3 title-2">Intro</h2>
 
 <p>
-V spolupraci s Erste Group International sme pracovali na prototype mobilnej aplikacie
-ktora pomaha viest deti k financnej gramotnosti. Deti sa naucia na co sluzia peniaze, 
-aky je rozdiel medzi prijmami a vydavkami ci ako si peniaze pravidelne setrit atd. Dieťa ma pomocou aplikacie vlastný pasívný prístup k uctom ktore si moze same pomenovat a sporit si snimi na svoje sny.
+V spolupráci s Erste Group International som pracoval na prototype mobilnej aplikácie,
+ktorá pomáha viesť deti k finančnej gramotnosti. Deti sa naučia načo slúžia peniaze, 
+aký je rozdiel medzi príjmami a výdavkami či ako si peniaze pravidelne šetriť atď. Dieťa má pomocou aplikácie vlastný pasívny prístup k účtom, ktoré si môže samé pomenovať a sporiť si snimi na svoje sny.
 </p>
 
 
 <p>
-Aplikácia dokaze komunikovat s hardware krabičkou (ako pokladnickou) kam si mozu deti vkladat fyzicke peniaze. Tie sa im nasledne pripisuju na sporiaci ucet. Rodic moze detský účet sledovať a ovládať vo svojom internet bankingu.
+Aplikácia dokáže komunikovať s hardware krabičkou (ako pokladničkou) kam si môžu deti vkladať fyzické peniaze. Tie sa im následne pripisujú na sporiaci účet. Rodič môže detský účet sledovať a ovládať vo svojom internet bankingu.
 </p>
 
 
 <p>
-Cielom projektu bolo otestovat ako moze hardware v realnom case komunikovat s iOS aplikaciou ktora nasledne zobrazuje ziskane data v grafickej podobe na obrazovke smartphonu.
+Cieľom projektu bolo otestovať ako môže hardware v reálnom čase komunikovať s iOS aplikáciou, ktorá následne zobrazuje získané dáta v grafickej podobe na obrazovke smartphonu.
 </p>
 
 
@@ -26,56 +26,48 @@ Cielom projektu bolo otestovat ako moze hardware v realnom case komunikovat s iO
 
 <h2 class="h3 title-2">Moja úloha</h2>
 
-<p>Ulohou bolo navrhnut vizualny dizajn aplikacie podla sucasneho dizajn manualu aplikacii George od Slovenskej sporitelne.</p>
+<p>Úlohou bolo navrhnúť vizuálny dizajn aplikácie podľa súčasného dizajn manuálu aplikácií George od Slovenskej sporiteľne.</p>
 
 
 <h3 class="h4 title-2">Koncept</h3>
 
-<p>Dieta moze mat v aplikacii stanoveny financny ciel alebo hmotnu vec na ktoru si postupne odklada peniaze. Ak si zvladne nasporit urcitu ciastku, rodic moze dieta lubovolne odmenit, napr. odoslat na ucet financny bonus. Aplikacia zobrazuje historiu vkladov dietata, aktualny stav uctu, zoznam splnenych cielov, ziskane bonusy alebo progresbar ktory ukazuje kolko € ostava k dosiahnutiu aktualneho ciela.</p>
+<p>Dieťa môže mať v aplikácií stanovený finančný cieľ alebo hmotnú vec na ktorú si postupne odkladá peniaze. Ak si zvládne nasporiť určitú čiastku, rodič môže dieťa ľubovoľne odmeniť, napr. odoslať na účet finančný bonus. Aplikácia zobrazuje históriu vkladov dieťaťa, aktuálny stav účtu, zoznam splnených cieľov, získané bonusy alebo progresbar ktorý ukazuje koľko € ostáva k dosiahnutiu aktuálneho cieľa.</p>
 
 
-{{{getPicture 'egit-1' 'png' 'Responsive image' 'Lorem ipsum dolor sit amet'}}}
+{{{getPicture 'egit-1' 'png' 'Obrázok ktorý znázorňuje vizuálny dizajn aplikácie, výber profilu a úvodná stránka' ''}}}
 
 
-{{{getPicture 'egit-2' 'png' 'Responsive image' 'Lorem ipsum dolor sit amet'}}}
+{{{getPicture 'egit-2' 'png' 'Obrázok ktorý znázorňuje ďaľšie možnosti aplikácie' ''}}}
 
 
-<h3 class="h4 title-2">Komunikacia appky s hardwarom</h3>
+<h3 class="h4 title-2">Komunikácia appky s hardwarom</h3>
 
 <p>
-Prototyp bol pomerne jednoduchý. Vo vnutri krabicky bol ultrazvukovy senzor, ktory ak zaznamenal 
-prerusenie nejakym predmetom hodenym cez otvor na mincu, nasledne zvysil pocitadlo v pamati 
-o 1. Na tuto logiku bolo pouzite Arduino a zaroven sa tieto zbierane data (pocitadlo) zobrazovali na LCD.
+Prototyp bol pomerne jednoduchý. Vo vnútri krabičky bol ultrazvukový senzor, ktorý ak zaznamenal 
+prerušenie nejakým predmetom hodeným cez otvor na mincu, následne zvýšil počítadlo v pamäti 
+o 1. Na túto logiku bolo použité Arduino a zároveň sa tieto zbierané dáta (počítadlo) zobrazovali na LCD.
 </p>
 
 
 <p>
-V prípade, že nieco zaznamenal senzor, Arduino odoslalo data cez bluetooth do aplikacie, kde sa taktiez zvysilo pocitadlo o 1. Aplikacia zobrazovala kolko ma uzivatel nasporenych minci.
+V prípade, že niečo zaznamenal senzor, Arduino odoslalo dáta cez bluetooth do aplikácie, kde sa taktiež zvýšilo počítadlo o 1. Aplikácia zobrazovala koľko má užívateľ nasporených mincí.
 </p>
 
 
 <p>
-Komunikacia z takeho zariadenia cez bluetooth na mobilnu aplikáciu vacsinou funguje tak, ze sa dohodnu kody vo forme stringov, na ktore je aplikacia pripravena reagovat ked jej dorazia cez bluetooth (vyuziva sa serial interface).
+Komunikácia z takého zariadenia cez bluetooth na mobilnú aplikáciu väčšinou funguje tak, že sa dohodnú kódy vo forme stringov na ktoré je aplikácia pripravená reagovať keď jej dorazia cez bluetooth (využíva sa seriál interface).
 </p>
 
 
 <p>
 <b>Priklad:</b>
 
-cez bluetooth dorazi do aplikacie string "INCREASE_COUNTER". Kedze aplikacia pocuva cez bluetooth, porovna si to co jej prislo spolu s tymto stringom a ak sa to zhoduje, adekvatne reaguje (v nasom pripade to bolo zvysenim toho cisla).
+cez bluetooth dorazí do aplikácie string "INCREASE_COUNTER". Keďže aplikácia počúva cez bluetooth, porovná si to čo jej prišlo spolu s týmto stringom a ak sa to zhoduje, adekvátne reaguje (v našom prípade to bolo zvýšením toho čísla).
 </p>
 
 
 {{#>footer}}
 
-    <div class="m-b-6 m-b-8-large">
-        <a href="{{ projects.project1.href }}" class="h2">{{ projects.project1.title }}</a>
-    </div>
-
-
-    <div>
-        <a href="{{ projects.project2.href }}" class="h2">{{ projects.project2.title }}</a>
-    </div>
-
+    {{{getProject projects.project1}}}
 
 {{/footer}}

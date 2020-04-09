@@ -4,6 +4,57 @@
 
 /*
 
+
+		- Doplnit "intro" text k jednotlivym projektom
+
+
+
+
+		- Pozri websupport gitlab, spravit clone poslednej verzie, alebo skopirovat z iMac
+
+		  OK
+
+
+		- Skontroluj existujuce projekty, chybali popisy obrazkov a pod.
+
+
+		- Nastavit hover pre nadpisy na uvodnej stranke
+
+		  OK
+
+
+		- Po kliknuti na Resume: bud zobrazit samostatny PDF dokument, alebo zobrazit priamo na stranke
+
+
+		- htaccess, doplnit podmienky pre URL-ky
+
+
+		- Spravit "build" + commit na GIT
+
+
+		- nastavit "mailto" v kontakte
+
+
+		- diakritika
+
+		
+		- Preniest, intro-text jednotlivych projektov do "projects.json"
+
+		  OK
+
+
+		- Spravit helper getProject
+
+		  OK
+
+		- Dalsie projekty
+
+		  OK
+
+
+		---------------------------
+
+
 		-  Nastylovat hlavny obsah pre Desktop - Uvod
 
 		   OK
