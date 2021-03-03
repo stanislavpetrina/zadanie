@@ -1,36 +1,11 @@
 
 /* RESET, FIXES */
 
-a, button:focus { outline: none; }
+ul{
 
-
-video { 
-
-	width:100%;
-	display:block;
-
-}
-
-
-.video {
-
-	background-size:cover;
-
-}
-
-
-.reset-list {
-
-		//@extend .no-bullet;
-		margin:0 !important;
-
-}
-
-// a { outline: none; }  =>  DON'T DO IT!  =>  WHY?  => http://www.outlinenone.com/
-
-.reveal:focus {
-
-	outline:0;
+	list-style:none !important;
+	padding: 0 !important;
+	margin: 0 !important;
 
 }
 
@@ -59,52 +34,9 @@ to handle this for you, but you can add some extra CSS to account for it.
 
 /* HELPERS */
 
-.show {
-	
-		display:block !important;
-
-}
-
-
-.display-block {
-
-		display:block;
-
-}
-
-
-.scroll-off {
-
-		overflow: hidden;
-		height: 100%;
-
-}
-
-
 .clearfix {
 
 		@include clearfix;
-
-}
-
-
-.zoom-in {
-
-		cursor: zoom-in;
-
-}
-
-
-.zoom-out {
-
-		cursor: zoom-out;
-
-}
-
-
-.shadow-pic {
-
-		border:1px solid #ececec;
 
 }
 
@@ -113,844 +45,312 @@ to handle this for you, but you can add some extra CSS to account for it.
 
 /* DECORATION */
 
-.href {
-	color:blue;
-	text-decoration:underline;
-}
-
-
-////
-// here's a simple way to bring em-calc() back into your arsenal:
-// https://github.com/zurb/foundation-sites/issues/7158
-////
-
-@function em-calc($args...) {
-    
-    @return -zf-bp-to-em($args...)
-
-}
 
 /*-----------------------------------------------------------------*/
 
 /* COLORS */
 
-$bg-color:#31394e;
+.color-light{
 
+	&, a{ 
 
-header a:focus{ 
-
-	color:rgba(255, 255,255, 0.8);
-	border-bottom:1px solid white;
-
-}
-
-.hover-gray {	
-
-	&:hover { color:#717171; }
-	&:focus { color:#717171; }
-
-}
-
-/*-----------------------------------------------------------------*/
-
-
-/* REVEAL */
-
-
-.reveal {
-	
-
-	padding-top:0 !important;
-	padding-bottom:0 !important;
-	text-align:center;
-	background-color:rgba(0,0,0,0.7) !important;
-
-	button:hover {
-
-			color:black;	
-
+		color:white; 
 	}
 
+	a:hover{
 
-	.content {
-
-			display:flex;
-			height:100%;
-
-	}
-
-
-	.wrap { 
-
-			margin:auto;
-
-	}
-
-
-	img {
-			
-			width:100%;
-			max-width:1600px;
-			position:relative;
-			z-index: -1;
-			border:none;
+		color:white;
+		opacity:0.5;
 
 	}
 
 }
-
 
 /*-----------------------------------------------------------------*/
 
 /* OTHER */
 
-.rect {
-	
-	width: 45px;
-	height: 2px;
-	background:black;
-
-
-	@include breakpoint(large) {
-
-			width:90px;
-
-	}
-
-}
-
-
-.rect-2 {
-	
-	width: 25px;
-	height: 2px;
-	background:black;
-
-
-	@include breakpoint(large) {
-
-			width:40px;
-
-	}
-
-}
-
-
-figcaption {
-
-	font-size: rem-calc(17);
-	color:#7d7d7d;
-
-}
-
+hr{ opacity:0.2; }
 
 /*-----------------------------------------------------------------*/
 
 /* TYPOGRAPHY */
 
-// Font families
-.font-family-1 { font-family: 'Roboto Mono', monospace !important; }
-.font-family-2 { font-family: 'Roboto', sans-serif !important; }
-
+h1, h2, h3, h4, h5, h6 { font-weight:bold !important; }
 
 // Text decorations
-.font-weight-light  { font-weight: 300 !important; }
+.font-weight-regular  { font-weight: 400 !important; }
 .font-weight-medium { font-weight: 500 !important; }
 .font-weight-bold 	{ font-weight: 700 !important; }
 
-.text-initial 	{ text-transform: initial; }
-.text-underline { text-decoration: underline; }
 
 
-.title-1,
-.title-2 {
+/*-----------------------------------------------------------------*/
 
-		@extend .font-family-1;
-		
+/* GLOBAL */
+
+.grid-container p.h3 {
+
+	line-height: 2.1rem;
+
+}
+
+
+/*-----------------------------------------------------------------*/
+
+/* FORM */
+
+
+form{
+
+	input[type="submit"]{
+
+		cursor:pointer;
+
+	}
+
+	input, textarea {
+
+		&:focus{
+
+			border-color: inherit;
+  			box-shadow: none;
+
+		}
+
+	}
+
+}
+
+
+form#comments{
+
+	input[type="text"], 
+	input[type="email"], 
+	textarea { 
+ 
+		margin-top:12px;
+		padding:12px;
+		border-radius:2px;
+		border:1px solid #ddd;
+
+		&:focus{ border:1px solid black; }
+
+	}
+
+	label{ font-weight:bold; }
+
+	textarea { width:100%; }
+
+
+	input[type="submit"]{
+
+		background-color:black;
+		color:white;
+
+
+		&:hover{
+
+			background-color:white !important;
+			outline:1px solid black;
+			color:black;
+
+		}
+
+	}
+
+}
+
+
+/*-----------------------------------------------------------------*/
+
+/* FORM NEWSLETTER */
+
+form#newsletter{
+
+	input[type="email"]{
+
+		width:100%;
+		padding:12px;
+		background:none;
+		border:none;
+		border-bottom:1px solid gray;
+		color:grey;
+
+		&::placeholder{
+			color:white;
+			opacity:0.5;
+		}
+
+		&:focus{
+			color:black;
+			background-color:white;
+		};
+
+	}
+
+
+	input[type="submit"]:hover{
+
+		color:white;
+		outline:1px solid white;
+		background-color:black;
+
+	};
+
+}
+
+
+/*-----------------------------------------------------------------*/
+
+/* BUTTONS */
+
+
+.btn{
+
+	text-transform: uppercase;
+	font-size:13px;
+	font-weight:bold;
+	letter-spacing: 2px;
+	padding:16px 28px;
+	border-radius:2px;
+	border:none;
+
+}
+
+
+/*-----------------------------------------------------------------*/
+
+/* ICONIFY */
+
+
+.iconify { width: 32px; height: 32px; }
+
+
+/*-----------------------------------------------------------------*/
+
+/* BACKGROUND */
+
+
+.bg-img{
+
+	position:relative;
+	background-position: 0% 50%;
+	background-position-x: 0%;
+	background-position-y: 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	box-sizing: border-box;
+
+
+	.grid-container {
+
+		position:relative;
+		z-index:2;
+
+	} 
+
+
+	.color-overlay {
+
+  		width: 100%;
+  		height: 100%;
+  		background: #202020;
+  		opacity: 0.8;
+  		position: absolute;
+  		top:0;
+  		z-index:1;
+
+	}
+
+}
+
+
+.bg-1 {
+
+	background-image: url("https://static.mujjo.com/lhj-JEs.Kj7b~a1c2/w:auto/h:auto/q:auto/https://www.mujjo.com/static/full-leather-wallet-case-for-iphone-12-black-001-scaled.jpg");
+
+}
+
+
+.bg-2 {
+
+	background-color:black;
+
+}
+
+
+.bg-3 {
+
+	background-image: url(https://static.mujjo.com/lhj-JEs.Kj7b~a1c2/w:auto/h:auto/q:auto/https://www.mujjo.com/static/full-leather-wallet-case-for-iphone-12-black-003.jpg);
+
+}
+
+
+
+.bg-4 {
+
+	background-image: url(https://static.mujjo.com/lhj-JEs.Kj7b~a1c2/w:auto/h:auto/q:auto/https://www.mujjo.com/static/signature-leather-black.jpg);
+
+}
+
+
+.bg-5{
+
+	background-color:#3456d1;
+
+}
+
+
+/*-----------------------------------------------------------------*/
+
+/* FOOTER */
+
+.footer{
+
+	a{
+
+		font-size:0.65rem;
+		letter-spacing: 1px;
 		text-transform: uppercase;
+		font-weight:bold;
+
+	}
+
+
+	p{
+
+		margin:8px 0 0 0;
+		font-size:0.7rem;
+
+	}
+
+
+	ul.terms li{
+
+		display:inline;
+		margin-right:16px;
+
+		&:last-child{ margin-right:0; }
+
+	}
+
+
+	ul.social li{
+
+		display:inline;
+		margin-right:20px;
+
+		&:last-child{ margin-right:0; }
+
+		.iconify { width: 20px; height: 20px; }
+
+	}
 
 }
 
-.title-1 {
 
-		margin:0;
 
 
-		@include breakpoint(small) {
 
-				font-size:16px;
-				font-weight:500;
-				letter-spacing:3.5px;
 
-		}
-
-
-		@include breakpoint(medium) {
-
-				font-size:18px;
-
-		}
-
-}
-
-/*-----------------------------------------------------------------*/
-
-/* MIXINS */
-
-
-
-/*-----------------------------------------------------------------*/
-
-/* SPACING */
-
-/*-----------------------------------------------------------------*/
-
-/* HEADER */
-
-header {
-
-		// BG
-		background-color:#25275d;
-
-		// Icons
-		.iconify { 
-
-				font-size: 25px;
-				color: white; 
-
-		}
-		
-		h1 {
-
-				font-weight:700;
-				margin-bottom:0;
-
-
-				span { 
-						
-						display:block;
-						font-weight:400;
-						opacity:0.8;
-
-				}
-
-		}
-
-	
-		&, a { 
-
-				color: white;
-				text-transform: uppercase;
-	
-		}
-
-
-		a {
-
-				padding:0 !important;
-
-				&.navbar-brand { font-weight:700 !important; }
-
-				&:hover { color:white; };
-
-		}
-
-
-		h1, ul, a {
-		
-				@extend .font-family-1;
-
-		}
-
-
-		/* ----------------------------------------------------------------------------- */
-
-		// Navigation
-
-		
-		// Responsive menu
-
-		.navbar {
-				
-				position: relative;
-				z-index:2;
-
-				.auto { 
-
-						margin-top:auto;
-						margin-bottom:auto;
-
-				}
-
-		}
-
-
-		.title-bar {
-
-				padding:0;
-    			background: none;
-
-    			.icon-close { margin-right:-5px; }
-
-    			
-
-		}
-
-
-		.top-bar {
-
-				padding:0;
-
-				&, ul { background-color:transparent !important; }
-
-
-				// Line
-
-				.rect {
-						
-						position: relative;
-					    top: 50%;
-					    transform: translateY(-50%);
-						background-color:white;
-
-				}
-
-
-
-				// Tablets, Smartphones
-
-				@include breakpoint(medium down) {
-
-						z-index:1;
-						bottom:0;
-
-
-						& {
-
-								position:absolute;
-								top:0;
-								left:0;
-								right:0;
-
-								background-color:$bg-color !important;
-
-						}
-						
-
-						ul.dropdown {
-
-								display:block;
-								margin-top:200px;
-
-
-								li {
-										
-										font-size:30px;
-										margin-bottom: 60px;
-
-
-										&:last-child {
-
-												margin-bottom:0; 
-
-										}
-
-
-										&:first-child {
-
-												display:none; 
-
-										}
-
-								}
-
-						}
-
-
-
-						// Landscape mode
-
-						@include breakpoint(landscape) {
-
-								ul.dropdown {
-
-										margin-top:150px;
-
-										li {
-
-												font-size: 25px;
-												margin-bottom: 40px;
-
-										}				
-
-								}
-
-						}
-
-				}
-
-
-
-				// Smartphones and devices with max.width 1023x
-
-				@include breakpoint(smedium down) {
-
-						.top-bar-left { 
-
-								bottom:40px; 
-
-						}
-
-
-						ul.dropdown {
-
-								margin-top:140px;
-
-
-								li {
-
-										font-size:25px;
-										margin-bottom: 50px;
-
-								}
-
-
-						}
-
-
-
-						@include breakpoint(landscape) {
-
-								ul.dropdown {
-
-										margin-top:150px;
-
-										li {
-
-												font-size:23px;
-												margin-bottom: 40px;
-
-										}			
-
-								}
-
-						}
-
-				}
-
-
-				// Inline responsive menu
-
-				@media screen and (max-width: 1024px) and (orientation: landscape) and (max-height: em-calc(500px)) {
-
-						.grid-container {
-
-								display:flex;
-								height:100%;
-
-						}
-
-
-						ul.dropdown {
-
-								margin-top:auto;
-								margin-bottom:auto;
-
-								li {
-
-										display:inline-block;
-										margin-right:45px;
-										margin-bottom:0;
-										font-size:28px;
-
-										&:last-child {
-
-												margin-right:0; 
-
-										}
-
-
-								}
-
-
-						}
-
-				}
-
-
-				// Desktop
-
-				@include breakpoint(large) {
-
-						& {
-
-								height:100%;
-
-						}
-
-
-						
-
-						
-						ul li {
-
-								margin-right:50px;
-
-								&:first-child { margin-right:60px; }
-								&:last-child { margin-right:0; };
-
-
-								a { letter-spacing: 0.5px; }
-
-						}
-
-
-						a { font-size: 19px; }
-
-				}
-
-		}
-
-		// End - Navigation
-
-		/* ----------------------------------------------------------------------------- */
-
-		
-		/* HEADER TITLE */
-
-		// Mobile devices, portrait
-
-		@include breakpoint(small) {
-
-				// .header
-
-				a.navbar-brand {
-
-						font-size: 15px;
-						letter-spacing: 1.3px;
-
-				}
-
-				
-				&.header-index {
-
-						h1 {
-
-								margin-top:80px;
-								line-height:50px;
-								font-size:30px;
-								letter-spacing:1px;
-
-
-								span {
-
-										font-size:15px;
-										letter-spacing:3px;
-										line-height:35px;
-
-								}
-
-						}
-
-				}
-
-
-		}
-
-
-
-		@include breakpoint(smedium) {
-
-				a.navbar-brand {
-
-						font-size: 17px;
-						letter-spacing: 1.5px;
-
-				}
-
-				
-				&.header-index {
-
-						h1 {
-
-								line-height:60px;
-								font-size:35px;
-
-
-								span {
-
-										font-size:17px;
-										letter-spacing:3.5px;
-
-								}
-
-						}
-
-
-						h1.header-project {
-
-								font-size:30px; 
-								line-height:40px !important;
-
-						}
-
-				}
-
-		}
-
-
-
-		// Mobile devices, landscape mode
-
-		@media screen and #{breakpoint(medium down)} and #{breakpoint(landscape)} {
-
-
-				&.header-index {
-
-						h1 { 
-
-								margin-top:90px;
-								font-size:45px !important;
-								line-height:80px !important;
-
-
-								span {
-
-										font-size:19px !important;
-										line-height:35px !important;
-										letter-spacing:3.5px !important;
-
-								}
-
-						}
-
-
-						h1.header-project {
-
-								font-size:35px !important; 
-								line-height:60px !important;
-
-						}
-
-
-				}
-
-		}
-
-		
-		
-		// Tablets
-
-		@include breakpoint(medium) {
-
-				// .header 
-
-				a.navbar-brand {
-
-						font-size: 19px;
-						letter-spacing: 2px;
-
-				}
-
-
-				&.header-index {
-
-						h1 { 
-
-								margin-top:120px;
-								font-size:55px; 
-								line-height:100px;
-
-
-								span {
-
-										font-size:25px;
-										line-height:45px;
-										letter-spacing:4px;
-
-								}
-
-						}
-
-				}
-
-		}
-
-
-
-
-
-		// Desktop
-
-		@include breakpoint(large) {
-
-				&.header-index {
-
-						h1 { 
-
-								margin-top:180px;
-								font-size:70px;
-
-						}
-
-						h1.header-project {
-
-								font-size:50px; 
-
-						}
-
-				}
-
-
-				// Line
-
-				.rect { display: block; }
-
-		}
-
-
-		/* ----------------------------------------------------------------------------- */
-
-		/* PROFILE PAGE */
-
-		&.header-profile {
-
-				
-				@include breakpoint(small) {
-
-						
-						& {
-
-								padding-bottom:50px;
-
-						}
-
-
-						h1 {
-
-								margin-top:50px;
-								text-align:center;
-
-						}
-
-						
-						img {
-
-								width: rem-calc(220);
-								box-shadow: 12px 12px 0px 0px rgba(0,0,0,0.20);		
-
-						}
-
-				}
-
-
-
-				@include breakpoint(slandscape) {
-
-						& {
-
-								height:310px;
-
-						}
-
-
-						h1 {
-
-								font-size:45px;
-								margin-top:110px;
-								text-align:left;
-
-						}
-
-
-						.slandscape-6 {
-
-								min-width: 260px;
-								max-width: 280px;
-
-						}
-
-
-						img {
-
-								width: rem-calc(200);
-
-						}
-
-				}
-
-
-
-				@include breakpoint(medium) {
-
-
-						& {
-
-								height:360px;
-
-						}
-
-
-						h1 {
-
-								font-size:55px;
-								margin-top:120px;
-
-						}
-
-
-						.slandscape-6 {
-
-								max-width: 320px;
-
-						}
-
-
-						img {
-				
-								width:225px;
-								box-shadow: 15px 15px 0px 0px rgba(0,0,0,0.20);			
-
-						}
-
-				}
-
-
-				
-				@include breakpoint(large) {
-
-						& {
-
-								height:440px;
-
-						}
-
-
-						h1 {
-
-								font-size:70px;
-								margin-top:130px;
-
-						}
-
-
-						.slandscape-6 {
-
-								max-width: inherit;
-
-						}
-
-
-						img {
-
-								width: 280px;
-
-						}
-
-				}
-
-
-		}
-
-
-}
